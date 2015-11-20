@@ -1,0 +1,128 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag 'carousel-images/code-smaller.jpg', class: 'first-slide slide-image', alt: 'Code Image' %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Web Developer.</h1>
+          <p>Dev Bootcamp graduate with plans to work as a developer in the Bay Area.</p>
+          <p><%= link_to 'Read More on my Blog', articles_path, class: "btn btn-lg btn-primary", role: "button" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'carousel-images/woods-smaller.jpg', class: 'second-slide slide-image', alt: 'Woods Image' %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Amateur horticulturalist.</h1>
+          <p>Cultivates a variety of plants for both aesthetic reasons and scientific curiosity. Underwent a number of horticultural classes at the University of Illinois Urbana-Champaign.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://instagram.com/anthonycastelli01/" role="button">See More</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'carousel-images/circuits-smaller.jpg', class: 'third-slide slide-image', alt: 'Circuitboard Image' %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Circuit Designer</h1>
+          <p>Previously worked on a self-navigating car, a mobile sensor platform with 3D printed wheels, and various personal projects all involving circuit design.</p>
+          <p><%= link_to 'Browse Examples', projects_path, class: "btn btn-lg btn-primary", role: "button" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div><!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <%= image_tag 'index/ruby.png', class: 'img-circle', alt: 'Ruby Logo', width: "140", height: "140" %>
+      <h2>Ruby</h2>
+      <p>Before Dev Bootcamp started, I had never done any Ruby programming other than a quick intro tutorial on CodeAcademy. Now that I've graduated I have experience using Ruby with Sinatra and Rails to build web apps. And that includes this site!</p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <%= image_tag 'index/javascript.png', class: 'img-circle', alt: 'Javascript Logo', width: "140", height: "140" %>
+      <h2>Javascript</h2>
+      <p>Javascript is the language I'm most familiar with and enjoy using the most. I have a few personal projects that were done in Javascript a long time before Dev Bootcamp, and have built a number of MEAN stack apps during Dev Bootcamp.</p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <%= image_tag 'index/python.png', class: 'img-circle', alt: 'Python Logo', width: "140", height: "140" %>
+      <h2>Python</h2>
+      <p>Python is the only language I have coded in professionally. I was working as a Python developer for the summer before Dev Bootcamp started, and in the past I worked for the Midwestern Regional Climate Center as a student programming intern doing data analysis using Python.</p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Atmospheric Science. <span class="text-muted">Data Analysis and Visualizations</span></h2>
+      <p class="lead">Received a Bachelor's Degree in Atmospheric Science from the University of Illinois at Urbana-Champaign in 2015, after getting experience programming using MATLAB, FORTRAN, and Python.</p>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag 'index/weather.png', class: 'featurette-image img-responsive center-block', alt: 'ATMOS wind projection'%>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+      <h2 class="featurette-heading">Circuit design experience <span class="text-muted">Personal Projects and Classwork.</span></h2>
+      <p class="lead">I previously have worked on a self-navigating car, a mobile sensor platform with 3D printed wheels, and various personal projects all involving circuit design.</p>
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+      <%= image_tag 'index/info390car.jpg', class: 'featurette-image img-responsive center-block', alt: 'Robotic Car'%>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Board Games. <span class="text-muted">They're pretty great.</span></h2>
+      <p class="lead">I really enjoy board games, and try to play new ones whenever I can. I had to get rid of the ones I had when moving from Illinois to California, but am planning to get my collection back together ASAP.</p>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag 'index/games.jpg', class: 'featurette-image img-responsive center-block', alt: 'Board Games'%>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2015 Anthony Castelli.</p>
+  </footer>
+
+</div><!-- /.container -->

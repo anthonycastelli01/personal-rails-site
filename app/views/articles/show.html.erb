@@ -1,0 +1,9 @@
+<h1><%= @article.title %></h1>
+<h2><%= @article.subheading %></h2>
+
+<pre>
+  <%= @article.text %>
+</pre>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

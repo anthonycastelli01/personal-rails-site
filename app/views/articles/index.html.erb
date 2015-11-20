@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Recent Articles</h3>
+      </div>
+      <div class="panel-body">
+        <% @articles.first(20).reverse_each do |article| %>
+          <%= link_to article.title, article%><br>
+        <% end %>
+
+        <br>
+        <br>
+
+        <%= link_to 'Submit New Article', new_article_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-9">
+    <h1>Recent Articles:</h1>
+
+    <% @recent_articles.reverse_each do |article| %>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2><%= article.title %></h2>
+            <h3><%= article.subheading %></h3>
+            <h4><%= article.created_at %></h4>
+          </div>
+          <div class="panel-body">
+            <p><%= article.text.split(" ").first(200).join(" ") %> ...</p>
+
+            <div>
+              <%= link_to 'Show', article_path(article) %> | <%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

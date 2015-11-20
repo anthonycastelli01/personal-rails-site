@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anthony Castelli</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<% if current_page?(root_path) %>
+  <body class="main-page-body">
+<% else %>
+  <body class="directory-body">
+<% end %>
+
+  <% if current_page?(root_path) %>
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <%= render "shared/navigation" %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <%= render "shared/navigation" %>
+    </nav>
+  <% end %>
+
+  <% if current_page?(root_path) %>
+    <%= yield %>
+  <% else %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  <% end %>
+
+</body>
+</html>
