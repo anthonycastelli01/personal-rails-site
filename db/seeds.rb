@@ -16,7 +16,9 @@ How does git help you keep track of changes?\n
 Git is version control software that allows for commits, which are sort of like save points in video games. A project can be reverted back to any of these points whenever necessary, so is a mistake is made the code can be switched back to a working version. These changes are all kept no matter how many there are, so you can keep track of any and all changes that occur.\n
 
 Why use GitHub to store your code?\n
-For starters, GitHub is an online place to store code, which means that if you forget the computer you were working on but want to continue coding, you can pull it down from the web instead of being stuck. GitHub is also a great community and allows others to see and proofread your code, so that you aren't working in a vacuum."})
+For starters, GitHub is an online place to store code, which means that if you forget the computer you were working on but want to continue coding, you can pull it down from the web instead of being stuck. GitHub is also a great community and allows others to see and proofread your code, so that you aren't working in a vacuum.",
+  created_at: DateTime.strptime("06/13/2015 12:00", "%m/%d/%Y %H:%M")
+})
 
 w1_cultural = Article.create({
   title: "Cultural Blog Post 1",
@@ -25,7 +27,8 @@ w1_cultural = Article.create({
 
 I'm both excited and nervous to start putting in the effort to get things done and learn more about how the world of development works. I can see myself arriving for class and being nervous in class and during coding sessions, just because that's how I always feel in new situations. It has always taken me a while to warm up to new experiences but once I get comfortable it's hard to get me away.\n
 
-This week, my biggest challenge was getting to the point where I could remember the whole process of pushing code while not overriding DBC's master branch. I was pretty nervous that something would go wrong and I'd mess something up! However, it was exciting to learn to work with git in a way that I had never used it before. I haven't quite worked on the time boxing techniques I wanted to try, just because this week has been a little hectic and I had to work on code at odd hours."})
+This week, my biggest challenge was getting to the point where I could remember the whole process of pushing code while not overriding DBC's master branch. I was pretty nervous that something would go wrong and I'd mess something up! However, it was exciting to learn to work with git in a way that I had never used it before. I haven't quite worked on the time boxing techniques I wanted to try, just because this week has been a little hectic and I had to work on code at odd hours.",
+  created_at: DateTime.strptime("06/14/2015 12:00", "%m/%d/%Y %H:%M")})
 
 w2_technical = Article.create({
   title: "Classes vs IDs",
@@ -38,7 +41,8 @@ IDs are used when a style is only going ot be used in one place. The idea is tha
   attribute: value;\n
 }\n
 This would apply the value to an attribute for the tag found with an ID equal to selector. An example of IDs used in my code for this week can be seen here: id use I used an ID here because there is only one banner on my site, and there should only ever be one.\n
-While classes are similar to IDs, their use is somewhat different. Classes are supposed to be used when a lare portion of a site needs to be formatted the same way. For example, in my code from this week: class image I used a class here because I knew that the main section of my page would all need to be of the same format, despite being made up of many tags. This main-map consisted of many separate parts, and having to put in a bunch of smaller selectors would be messy, so I used a class to keep it all together nicely and minimize the extra code. It's also important to note that while the syntax of a class selection in CSS is similar, it doesn't use a # character, but a . instead."})
+While classes are similar to IDs, their use is somewhat different. Classes are supposed to be used when a lare portion of a site needs to be formatted the same way. For example, in my code from this week: class image I used a class here because I knew that the main section of my page would all need to be of the same format, despite being made up of many tags. This main-map consisted of many separate parts, and having to put in a bunch of smaller selectors would be messy, so I used a class to keep it all together nicely and minimize the extra code. It's also important to note that while the syntax of a class selection in CSS is similar, it doesn't use a # character, but a . instead.",
+  created_at: DateTime.strptime("06/21/2015 12:00", "%m/%d/%Y %H:%M")})
 
 w3_technical = Article.create({
   title: "Arrays and Hashes",
@@ -81,11 +85,13 @@ end\n
 This code will give ten values of strings like \"loc1\" and \"loc2\" values like \"Location 1\" and \"Location 2\". This is nice, but in order to get back at these values we can no longer use a simple numerical iteration loop, and have to use a more creative generator for strings that correspond to these locations. However, hashes have special functions that make their keys and values easier to access. For example:\n
 
 hash.each{|key, value| puts value}\n
-This will go through all of the keys and print out the values associated with them. However, the keys may not be sorted in order so don\'t depend on that!"})
+This will go through all of the keys and print out the values associated with them. However, the keys may not be sorted in order so don\'t depend on that!",
+  created_at: DateTime.strptime("06/29/2015 12:00", "%m/%d/%Y %H:%M")})
 
 w3_cultural = Article.create({
   title: "Thinking Style",
   subheading: "My Phase 0 Thinking Style",
   text: "During the first portion of DBC Phase 0, before any learning had been done, I had to take an online test to find out my Gregorc Thinking Style. After taking the test, I found that I had tied for both Concrete and Abstract Sequential thinking. This suggests, among other things, that I prefer to do things logically and with some order, as well as getting all the facts before making a decision. On top of this, I prefer dealing with structured challenges where others can be interacted with to get toward the final goal. I found that this really resonated with me in terms of things I had done in the past. I do really prefer to work with other people on things, and having all the available information before having to do something. However, I also resonated with Gregorc's predictions that I dislike working in groups and not having enough time to thoroughly explore a subject before doing something with it. This could prove a challenge when it comes time to actually work at DBC in person, as most of our work sems like it will involve groups. I think as long as a large portion of it is working in the same was as the pair challenges have been though, I should be fine. I really don't mind small groups and working one on one with a pair is pretty ideal. My biggest struggle so far has really been time. Between taking down my old apartment, moving across the country, and setting up a new living space it's been really tough to get the time to really thoroughly get to know the weekly concepts. I'd like to have time to do some of the optional things but it just hasn't been happening. This doesn't really directly relate to my learning style, btu I think my best course of action would be to take as much of my newfound free time to go through the material as I can.\n
 
-We also talked about growth vs. fixed mindsets, and the effects of having these mindsets on our work. I found through quizzes and readings that I have more of a growth mindset, however I can be very harsh on myself. I really do believe that it is possible for anyone to change the amount of intellengence an develop talent in areas, but when it comes to myself I am my own worst critic, and that can definitely hamper my ability to learn and grow. In order to overcome this, I need to go a little easier on myself and admit that I might need improvement, but that as long as I am learning and improving myself it will be fine."})
+We also talked about growth vs. fixed mindsets, and the effects of having these mindsets on our work. I found through quizzes and readings that I have more of a growth mindset, however I can be very harsh on myself. I really do believe that it is possible for anyone to change the amount of intellengence an develop talent in areas, but when it comes to myself I am my own worst critic, and that can definitely hamper my ability to learn and grow. In order to overcome this, I need to go a little easier on myself and admit that I might need improvement, but that as long as I am learning and improving myself it will be fine.",
+  created_at: DateTime.strptime("06/29/2015 12:00", "%m/%d/%Y %H:%M")})

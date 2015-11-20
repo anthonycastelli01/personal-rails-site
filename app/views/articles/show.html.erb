@@ -1,5 +1,6 @@
 <h1><%= @article.title %></h1>
 <h2><%= @article.subheading %></h2>
+<h4><%= @article.created_at.strftime("%B %e, %Y") %></h4>
 
 <pre>
   <%= @article.text %>

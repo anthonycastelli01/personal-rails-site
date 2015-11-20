@@ -26,7 +26,7 @@
           <div class="panel-heading">
             <h2><%= article.title %></h2>
             <h3><%= article.subheading %></h3>
-            <h4><%= article.created_at %></h4>
+            <h4><%= article.created_at.strftime("%B %e, %Y") %></h4>
           </div>
           <div class="panel-body">
             <p><%= article.text.split(" ").first(200).join(" ") %> ...</p>
