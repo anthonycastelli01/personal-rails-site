@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @controller = "articles_controller"
-    @articles = Article.all()
+    @articles = Article.all().reverse()
     @recent_articles = @articles.first(5)
   end
 

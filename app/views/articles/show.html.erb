@@ -1,10 +1,16 @@
-<h1><%= @article.title %></h1>
-<h2><%= @article.subheading %></h2>
-<h4><%= @article.created_at.strftime("%B %e, %Y") %></h4>
+<div class="main-article-container">
+  <div class="jumbotron">
+    <div class="container article-header">
+      <h1><%= @article.title %></h1>
+      <h2><%= @article.subheading %></h2>
+      <h4><%= @article.created_at.strftime("%B %e, %Y") %></h4>
+    </div>
+  </div>
 
-<pre>
-  <%= @article.text %>
-</pre>
+  <div class="container article-text">
+    <%= markdown(@article.text) %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    <%= link_to 'Back', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %>
+
+  </div>
+</div>

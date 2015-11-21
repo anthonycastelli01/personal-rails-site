@@ -31,13 +31,7 @@
     </nav>
   <% end %>
 
-  <% if current_page?(root_path) %>
-    <%= yield %>
-  <% else %>
-    <div class="container">
-      <%= yield %>
-    </div>
-  <% end %>
+  <%= yield %>
 
 </body>
 </html>
