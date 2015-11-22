@@ -106,7 +106,7 @@ w3_cultural = Article.create({
 We also talked about growth vs. fixed mindsets, and the effects of having these mindsets on our work. I found through quizzes and readings that I have more of a growth mindset, however I can be very harsh on myself. I really do believe that it is possible for anyone to change the amount of intellengence an develop talent in areas, but when it comes to myself I am my own worst critic, and that can definitely hamper my ability to learn and grow. In order to overcome this, I need to go a little easier on myself and admit that I might need improvement, but that as long as I am learning and improving myself it will be fine.",
   created_at: DateTime.strptime("06/29/2015 12:00", "%m/%d/%Y %H:%M")})
 
-  w4_technical = Article.create({
+w4_technical = Article.create({
     title: "Enumerable Ruby Methods",
     subheading: "Or: How .map Works",
     created_at: DateTime.strptime("07/11/2015 12:00", "%m/%d/%Y %H:%M"),
@@ -143,3 +143,137 @@ puts array
 
 => [2,4,6,8,10]
 ```"})
+
+w4_cultural = Article.create({
+  title: "Issues in the Tech World",
+  subheading: "Designing for Accessibility",
+  created_at: DateTime.strptime("07/11/2015 12:00", "%m/%d/%Y %H:%M"),
+  text: "I feel strange talking about issues in the tech world, because we've been so focused these past few weeks on how great and useful tech is. One of the great things we have learned about is the freedom (for better or worse) that CSS gives us in placing and formatting things on web pages. While it's definitely an option to do just about whatever you want, there are some things you should and shouldn't do if you want a useful site. This is where web design and layout comes into play. You don't want your site to have a fundamentally bad layout that's hard to navigate or where it's hard to find the information you need.\n
+
+Element colors also play a big part in the way people perceive your site. There's a huge selection of colors that can be selected from when working on a webpage, and some may go together really well and many don't look good at all. However, there's something many people may not think about when building a webpage. Imagine you've spent all day working on a project for a Christmas-themed website, and you're especially proud of the color scheme. The site is decorated all over with candy cane imagery, the buttons all have a holly theme, and you got the words to line up just right with the borders. At the end of the day, you submit the final page to your supervisor with a feeling of success and pride.\n
+
+The next day, you come in to work to find that he absolutely hates it! You ask what you did wrong that made him feel that way, and he responds that he can't even read half the page! He's green/red colorblind and all of your fancy buttons and borders appear as blobs to him! While the candy cane portions aren't an issue, you made all of the navigation buttons have a green background with red text, which just shows up as one indeterminate rectangle for him.\n
+
+It's for reasons like colorblindness that it's important to take in website color schemes seriously. When we design for a huge audience, it's easy to forget that not everyone can perceive the internet in the same way we do. While it can be easy to fix a color scheme, it might not be such an easy fix if you need to make the page accessible to blind people, or those who can't use a mouse. This may not be a common problem for most developers, but large corporations like Amazon and Facebook do need to worry about their customers with accessibility problems."})
+
+w5_technical = Article.create({
+  title: "Ruby Classes",
+  subheading: "Modeling Real-world Objects with Code",
+  created_at: DateTime.strptime("07/19/2015 12:00", "%m/%d/%Y %H:%M"),
+  text: "###Ruby Classes###\n
+A class in Ruby is a piece of code that organizes functions and values into one entity that can be recreated over and over again. This entity is known as an object, and creating an object is known as \"instantiating\" it - as in making an instance of it. Objects are very useful in a number of different ways - not only can they simplifty large amounts of code into small packages, but they can also be nested inside each other to form complex objects that imitate everyday things. A simple example is of an ATM - an object that not only stores information (how much money you have), but allows a user to change those values in a protected way (with the correct PIN).\n
+
+###Example Object###\n
+An ATM, in the simplest sense for an individual, is a box that you put money into so that it's safe and can be accessed later when you need it. In order to make this simple model work, we can make a Ruby class to hold some exmaple information. The class is defined as follows:\n
+
+```ruby
+class ATM
+  def initialize(starter_money)
+    @balance = starter_money
+  end
+end
+```
+In this case, you would instantiate an ATM object with the code:\n
+```ruby
+machine = ATM.new(400)
+```
+Thus, the ATM would be started with $400 in it for the current user. The only problem is, there's no way to get the money out or check how much is in there! What if you want to put more in? The simplest way is probably using attr methods:\n
+```ruby
+attr_accessor :balance
+```
+This allows direct access to the stored balance, and can be called like this:\n
+```ruby
+machine.balance
+=> 400
+machine.balance = 300
+machine.balance
+=> 300
+```
+You can probably see the problem with this though. Anyone can just go in and change the amount stored! Nothing is in place to keep someone from saying they have a million dollars, or for an enemy to change it to zero! An effective way to change the stored information securely is with accessor methods that include safety measures:\n
+```ruby
+class ATM
+  def initialize(starter_money, pin)
+    @balance = starter_money
+    @PIN = pin.to_s
+  end
+
+  def withdraw(amount)
+    p \"What is your PIN?\"
+    pin = gets.chomp
+    if (pin == @PIN)
+      @balance -= amount
+      return amount
+    else
+      p \"That is incorrect. Please try again later.\"
+    end
+  end
+
+  def balance?
+    p \"What is your PIN?\"
+    pin = gets.chomp
+    if (pin == @PIN)
+      p \"Your balance is #{@balance}\"
+    else
+      p \"That is incorrect. Please try again later.\"
+    end
+  end
+
+  def add_money(deposit)
+    p \"What is your PIN?\"
+    pin = gets.chomp
+    if (pin == @PIN)
+      @balance += deposit
+      p \"Thank you for your deposit. Have a nice day!\"
+    else
+      p \"That is incorrect. Please try again later.\"
+    end
+  end
+end
+```
+When we remove the attr_accessor portion of the code, these methods keep just anyone from changing the balance and getting into your finances. This is the great thing about objects! You can develop an intuitive system of code storage based on real life things that is easy for people to read and can be set up to be easy to fix too!
+"})
+
+w5_technical = Article.create({
+  title: "Pairing and Feedback",
+  subheading: "in DBC Phase0",
+  created_at: DateTime.strptime("07/19/2015 12:00", "%m/%d/%Y %H:%M"),
+  text: "###Pairing###\n
+Overall, pairing has been much better than I expected. My past experiences of coding with someone else there haven't been that great, but these challenges, where only one person has a specific task, has been much more enjoyable and organized. I really like the simplicity of one person doing the typing and one person looking everything up and providing extra guidance. It allows for each person to have a say in what's happening, and to feel like they're really contributing to the coding process. I think so far the most annoying thing has been having to use Google Hangounts, because it cuts out so frequently.\n
+
+###Feedback###\n
+So far, I've felt pretty good about the feedback I've received. I don't know if it was necessarily helpful for learning, but it was nice to hear people responding positively to the way I have been in pairing sessions. I think overall I have mostly gotten feedback about how it's been nice to have someone who knows what they're doing and is also willing to talk alound about the thought process gone through when coding. I had some trouble giving feedback in the beginning because I would always just want to put \"good job! keep up the good work!\" but I needed to really put something useful in there. I want to do a good job and help people out when they finish pairing, but I also feel like I'm a terrible writer and my comments are pretty bland.
+"})
+
+w8_technical = Article.create({
+  title: "Sorting Algorithms",
+  created_at: DateTime.strptime("08/06/2015 12:00", "%m/%d/%Y %H:%M"),
+  text: "In the past weeks, we have relied pretty heavily on enumerable methods and simple helper functions in both Ruby and Javascript. These methods keep us from having to know exactly what's happening, but allow us to do a lot of great and useful things as long as we understand the documentation pages. However, these methods are holding much more complicated code inside of them that is important to understand. One such set of methods is the sorting methods common to many languages. Underlying the basic idea of \"go sort this array\" is a series of useful potential algorithms, each of which is uniquely suited for different scenarios. Some of these are described below:\n
+
+###Bubble Sort###\n
+A common but slow algorithm used for sorting, bubble sort is a method by which an array is parsed through, and for every pair of two that exists, a comparison is done to see if they are in the right order. This is done over and over on the array until there is nothing left to be done. A simple analogy is a box of sand and rocks. If you shake the box, larger pieces are forced upward and smaller pieces move to the bottom until you get a \"sorted\" box. You can see an example of the algorithm used on numbers from Wikipedia here:\n
+![bubble sort animation](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
+This algorithm, while simple, is also very slow as it takes multiple passes to get a sorted answer. The runtime also increases the larger the dataset is. It not only takes more time to parse through the set, it takes longer to push all of the numbers into thir correct place. Bubble sorting works best on small sets of data that are reasonably sorted beforehand, because the worst case is to start with the largest number at the beginning and having to push it all the way to the end.\n
+
+###Quick Sort###
+Quick sort is another commonly used sorting algorithm, which uses statistical properties of a dataset to sort it. It is more complicated than the bubble sorting algorithm, due to the statistics involved. The algorithm for quick sort is to pick the middle value, and switch the values around so that values lower than the middle point are on one side and values above are on the other. Then, each side of the middle value is sorted by subdividing them into smaller parts and running another quick sort until all the values are in order, and finally working back up the values to check that everything is sorted. This is most easily done with recursion, and an image of what happense can be seen below (also from Wikipedia):\n
+![quick sort animation](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+This method is a lot more complicated than the bubble sort, but on average it gives better results. In the worst case, it can perform just as poorly as bubble sorting, but the general rule is that it's faster on sets in general and not only small datasets.\n
+
+In common practice, these sorting algorithms are combined together in a larger script. Tests are done on the array to check for things like length, average value, and other statistical factors that lead to a more efficient calculation. So, when methods like Array#sort! are used, it's really an overall script that analyzed the array and sorts based on the best choice for the situation.
+"})
+
+w9_technical = Article.create({
+  title: "Updating My Site",
+  subheading: "Bootstrap Saves the Day",
+  created_at: DateTime.strptime("08/16/2015 12:00", "%m/%d/%Y %H:%M"),
+  text: "Updating this page into a more modern blog was incredibly easy with the Bootstrap framework at my disposal. Every page was easy to incorporate into one or more of their templates, and they looked great right from the start. I only wish we could have used them the whole time! It was great to have to get used to all the \"trial and error\" stuff, but using Bootstrap was not only easy, it was enjoyable! I really liked the ease with which I could move things around and get everything to fit in with the ideas I had."})
+
+  w9_cultural = Article.create({
+    title: "Asking Good Questions",
+    subheading: "Getting the Right Answers",
+    created_at: DateTime.strptime("08/16/2015 12:00", "%m/%d/%Y %H:%M"),
+    text: "During the course of Phase 0, I have seen a lot of people asking questions on the Google Plus page. Not all of them have gotten very good responses, but every one that I have seen has at least gotten some type of response. I think in general the person responding has done their best to give a helpful answer with varying levels of success.\n
+
+The questions I have seen with the most useful answers are usually the most detailed. When people ask very vague questions online, it can lead to a lot of different answers that might not even have to do with what they asked. I think in this respect it's best to give as much detail in a question as possible, without obscuring the question in unrelated words.\n
+
+When it comes to coding specifically, it also helps to show people what's wrong. On G+ this is easy, because you can paste in images of your code and the error messages being given. Some sites, like Stackoverflow, allow you to paste the text version of your work into the page as a formatted item for ease of viewing. This is great for people who want to try your code out on their own machine and see what's wrong. In general though, a good example is useful to show people what it is you are struggling with."})

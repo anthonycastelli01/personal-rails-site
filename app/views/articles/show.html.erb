@@ -10,6 +10,8 @@
   <div class="container article-text">
     <%= markdown(@article.text) %>
 
+    <hr class="col-xs-12">
+
     <%= link_to 'Back', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %>
 
   </div>
