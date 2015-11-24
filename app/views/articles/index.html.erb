@@ -10,10 +10,10 @@
             <%= link_to article.title, article%><br>
           <% end %>
 
-          <br>
+          <!-- <br>
           <br>
 
-          <%= link_to 'Submit New Article', new_article_path %>
+          <%= link_to 'Submit New Article', new_article_path %> -->
         </div>
       </div>
     </div>
@@ -31,7 +31,8 @@
             <p><%= article.text.split(" ").first(200).join(" ") %> ...</p>
 
             <div>
-              <%= link_to 'Read More', article_path(article) %> | <%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Read More', article_path(article) %>
+               <!-- | <%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %> -->
             </div>
           </div>
         </div>
